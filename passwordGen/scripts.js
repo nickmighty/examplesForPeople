@@ -44,4 +44,4 @@ function gen([...chars], limit) {
 
 const password = gen(bucket, limit);
 
-console.log(password);
+console.log(password.join(""));
