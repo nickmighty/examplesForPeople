@@ -1,13 +1,13 @@
-let abc = "abcdefghijklmnopqrstuvwxyz";
-let numb = "0123456789";
-let symb = "*&%$#@";
+const abc = "abcdefghijklmnopqrstuvwxyz";
+const numb = "0123456789";
+const symb = "*&%$#@";
 
 let useAbc = true;
 let useUpperAbc = true;
 let useNumb = true;
 let useSymb = true;
 let limit = 10;
-let bucket = [];
+const bucket = [];
 
 if (useAbc) bucket.push(abc);
 if (useNumb) bucket.push(numb);
@@ -18,17 +18,17 @@ function gen([...chars], limit) {
   const randomNum = chars.length;
   const gimmeRandom = (num) => Math.floor(Math.random() * num);
   const passwordArr = [];
-  let ensureNum = 0;
+  let ensureThisChar = 0;
   
-  while (ensureNum < randomNum) {
+  while (ensureThisChar < randomNum) {
     const randomBucketIndex = gimmeRandom(limit);
-    const currentChar = chars[ensureNum]
+    const currentChar = chars[ensureThisChar];
     if (passwordArr[randomBucketIndex]) {
       continue;
     }
     const randomChar = currentChar[gimmeRandom(currentChar.length)];
     passwordArr[randomBucketIndex] = randomChar;
-    ensureNum++;
+    ensureThisChar++;
   }
   
   for (let i = 0; i < limit; i++) {
