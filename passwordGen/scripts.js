@@ -32,12 +32,14 @@ function gen([...chars], limit) {
   }
   
   for (let i = 0; i < limit; i++) {
-    if (passwordArr[i]) continue;
-      const randomIndex = gimmeRandom(randomNum);
-      const totalChars = chars[randomIndex].length;
-      const randomCharIndex = gimmeRandom(totalChars);
-      const randomChar = chars[randomIndex][randomCharIndex]
-      passwordArr[i] = randomChar;
+    if (passwordArr[i]) {
+      continue;
+    }
+    const randomIndex = gimmeRandom(randomNum);
+    const totalChars = chars[randomIndex].length;
+    const randomCharIndex = gimmeRandom(totalChars);
+    const randomChar = chars[randomIndex][randomCharIndex]
+    passwordArr[i] = randomChar;
   }
   return passwordArr;
 }
